@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Currencies!{% endblock %}
+
+{% block body %}
+    Currency rates for 1 USD
+    
+    <ul>
+    {% for currency in currencies %}
+        <li>
+            {{ currency.code }}:
+            {{ currency.value }}
+            (updated at {{ currency.modifiedOn|date("H:i:s m.d.Y") }})
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
